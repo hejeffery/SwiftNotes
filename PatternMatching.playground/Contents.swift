@@ -130,6 +130,12 @@ default:
     print("default")
 }
 
+// 可以两个case组合，用“,”分割
+// 第一部分用let location绑定，第二部分用前面绑定的值匹配范围
+if case .North(let location) = direction, case 3...6 = location {
+    print("two case: north location = \(location)")
+}
+
 
 
 
