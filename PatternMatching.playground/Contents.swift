@@ -77,7 +77,6 @@ for element in strs {
     default:
         print("是Int")
     }
-    
 }
 
 // 6. as类型转换匹配
@@ -94,6 +93,43 @@ for element in strs {
         print("其它类型")
     }
 }
+
+// where关键字的使用
+for num in 0...10 {
+    switch num {
+    case let n where n % 2 == 0:
+        print("--偶数，num = \(n)")
+
+    default:
+        print("-奇数，num = \(num)")
+    }
+}
+
+enum Direction {
+    case North(location: Int)
+    case South
+    case West
+    case East
+}
+
+let direction = Direction.North(location: 5)
+switch direction {
+case .North(let location) where location > 4:
+    print("north location = \(location)")
+    
+case .South:
+    print("South")
+    
+case .West:
+    print("West")
+    
+case .East:
+    print("East")
+    
+default:
+    print("default")
+}
+
 
 
 
