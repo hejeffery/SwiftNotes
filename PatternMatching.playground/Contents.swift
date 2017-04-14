@@ -136,8 +136,25 @@ if case .North(let location) = direction, case 3...6 = location {
     print("two case: north location = \(location)")
 }
 
+// 元组的模式匹配
+let location = "shanghai"
+let areacode = 023
+if case ("shanghai", 023) = (location, areacode) {
+    print("元组类型的模式匹配")
+}
 
-
+var username: String?
+var password: String?
+switch (username, password) {
+case let (nil, nil):
+    print("都为空")
+case let (username?, nil):
+    print("有用户名，没有密码")
+case let (nil, password?):
+    print("没有用户名，有密码")
+case let (username?, password?):
+    print("用户名和密码都有")
+}
 
 
 
