@@ -31,3 +31,15 @@ let addResult = mathOperate(100, 100, operate: addClosure)
 let subResult = mathOperate(90, 9, operate: subClosure)
 let divResult = mathOperate(20, 2, operate: divClosure)
 
+// 闭包中的隐藏参数，从$0开始
+let closureResult = mathOperate(100, 88, operate: {$0 - $1})
+print("closureResult = \(closureResult)")
+
+let closureResult1 = mathOperate(88, 77, operate: *)
+print("closureResult1 = \(closureResult1)")
+
+// 尾随闭包：方法的最后一个参数是比闭包，可以写成如下形式
+let tailClosureResult = mathOperate(90, 1) {
+    return $0 - $1
+}
+
